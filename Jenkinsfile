@@ -1,3 +1,4 @@
+
 properties([
   parameters([
     [
@@ -23,7 +24,7 @@ properties([
       ]
    ]
  ])
-]
+])
 
 pipeline {
   agent any
@@ -32,7 +33,6 @@ pipeline {
       steps {
         echo "${params.Environment}"
         echo "${params.Host}"
-       // echo "${params.BranchName}"
       }
     }
   }
