@@ -1,4 +1,3 @@
-def cmd = System.getenv()"Environments.groovy";
 pipeline {
     agent any
         stages {
