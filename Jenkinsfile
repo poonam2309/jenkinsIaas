@@ -1,4 +1,4 @@
-/*properties([
+properties([
   parameters([
     [
       $class: 'ChoiceParameter',
@@ -23,7 +23,7 @@
       ]
    ]
  ])
-])*/
+]
 
 pipeline {
   parameters {
@@ -37,9 +37,9 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-       // echo "${params.Environment}"
-       // echo "${params.Host}"
-        echo "${params.BranchName}"
+        echo "${params.Environment}"
+        echo "${params.Host}"
+       // echo "${params.BranchName}"
       }
     }
   }
