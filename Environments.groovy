@@ -1,1 +1,1 @@
-return ["Select:selected", "DEV", "TEST", "STAGE", "PROD"]
+return ["Select:selected", "dev", "test", "stage", "prod"]
