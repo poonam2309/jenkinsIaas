@@ -1,3 +1,4 @@
+def cmd = System.getenv()"Environments.groovy";
 pipeline {
     agent any
         stages {
@@ -23,7 +24,7 @@ pipeline {
                                         script: [
                                             classpath: [], 
                                             sandbox: false, 
-                                            script: load "Environments.groovy"
+                                            script: 'load "Environments.groovy"'
                                                // "return['dev1','stage1','prod1']"
                                         ]
                                     ]
