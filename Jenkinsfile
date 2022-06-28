@@ -23,7 +23,7 @@ pipeline {
                                         script: [
                                             classpath: [], 
                                             sandbox: false, 
-                                            script: 
+                                           // script: 
                                                groovyScriptId:'Environments.groovy'
                                                // "return['dev1','stage1','prod1']"
                                         ]
