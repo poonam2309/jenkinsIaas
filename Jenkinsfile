@@ -24,7 +24,7 @@ pipeline {
                                             classpath: [], 
                                             sandbox: false, 
                                            // script: 
-                                               groovyScriptId:'Environments.groovy'
+                                               def MyClass = load "Environments.groovy"
                                                // "return['dev1','stage1','prod1']"
                                         ]
                                     ]
