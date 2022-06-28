@@ -25,7 +25,7 @@ pipeline {
                                             classpath: [], 
                                             sandbox: false, 
                                             script:
-                                            "return['dev','stage','prod1']"
+                                            "return['dev','stage1','prod1']"
                                         ]
                                     ]
                                 ],
@@ -89,6 +89,7 @@ pipeline {
             stage('Parameters print'){
                 steps {
                     script { sh 'echo test'
+                            sh ' echo ${Env}'
                     }
                 }
             }
