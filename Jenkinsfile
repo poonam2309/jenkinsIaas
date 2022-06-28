@@ -1,5 +1,3 @@
-ne in Jenkinsfile
-
 properties([
   parameters([
     [
