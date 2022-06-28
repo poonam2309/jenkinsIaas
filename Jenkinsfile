@@ -24,7 +24,8 @@ pipeline {
                                             classpath: [], 
                                             sandbox: false, 
                                             script: 
-                                                "return['dev1','stage1','prod1']"
+                                               groovyScriptId:'Environments.groovy'
+                                               // "return['dev1','stage1','prod1']"
                                         ]
                                     ]
                                 ],
