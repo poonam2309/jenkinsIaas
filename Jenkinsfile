@@ -1,11 +1,7 @@
 properties([pipelineTriggers([githubPush()])])
 pipeline {
-    agent any
-        stages {
-            stage('Parameters'){
-                steps {
-                    script {
-                    properties([
+    agent any  
+                  properties([
                             parameters([
                                 [$class: 'ChoiceParameter', 
                                     choiceType: 'PT_SINGLE_SELECT', 
@@ -85,7 +81,9 @@ pipeline {
                         ])
                     }
                 }
-            }
+            
+  stages {
+      
             stage('Parameters print'){
                 steps {
                     script { sh 'echo test'
@@ -93,5 +91,6 @@ pipeline {
                     }
                 }
             }
-        }   
+        }  
+}
 }
