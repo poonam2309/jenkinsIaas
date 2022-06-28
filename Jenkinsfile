@@ -88,7 +88,7 @@ pipeline {
             }
             stage('Parameters print'){
                 steps {
-                    script { sh 'echo ${params.Env}'
+                    script { sh 'echo test'
                     }
                 }
             }
