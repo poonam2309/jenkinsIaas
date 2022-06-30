@@ -36,7 +36,7 @@ job('cloudrundeploy') {
             referencedParameter('PROJECT')
             referencedParameter('REGION')
         }
-        activeChoiceReactiveReferenceParam('VPC_CONNECTOR') {
+        activeChoiceReactiveReferenceParam('MAILSERVER') {
             description('Allows user choose from multiple choices')
             omitValueField()
             choiceType('FORMATTED_HIDDEN_HTML')
