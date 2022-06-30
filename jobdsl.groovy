@@ -8,7 +8,7 @@ job('cloudrundeploy') {
                 script('["gcp-kcfn01","gcp-cust01"]')
                 fallbackScript('"No Region selected"')
             }
-        },
+        }
          activeChoiceReactiveParam('REGION') {
             description('Allows user choose from multiple choices')
             filterable()
