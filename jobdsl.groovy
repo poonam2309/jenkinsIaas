@@ -23,14 +23,14 @@ job('cloudrundeploy') {
             omitValueField()
             choiceType('FORMATTED_HIDDEN_HTML')
             groovyScript {
-                script('def vpc1= "usc1-kcfn01-sss-cor-cnc01" \r\n
+                script('''def vpc1= "usc1-kcfn01-sss-cor-cnc01" \r\n
                       def vpc2= "use1-kcfn01-sss-cor-cnc01" \r\n
                       if(PROJECT=="gcp-kcfn01" && REGION=="us-central1") \r\n
                       return "<b>${vpc1}</b><input type=\"hidden\" name=\"value\" value=\"${vpc1}\" />" \r\n
                       else if (PROJECT=="gcp-kcfn01" && REGION=="us-east1") \r\n
                       return "<b>${vpc2}</b><input type=\"hidden\" name=\"value\" value=\"${vpc2}\" />" \r\n
                       else  \r\n
-                      return "Kindly select valid Project and its Respective Region"') 
+                      return "Kindly select valid Project and its Respective Region"''') 
                 fallbackScript('"fallback choice"')
             }
             referencedParameter('PROJECT')
