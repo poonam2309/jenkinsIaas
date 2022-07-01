@@ -21,7 +21,7 @@ job('cloudrundeploy') {
         activeChoiceReactiveReferenceParam('VPC_CONNECTOR') {
             description('Allows user choose from multiple choices')
             omitValueField()
-            choiceType('FORMATTED_HIDDEN_HTML')
+            choiceType('FORMATTED_HTML')
             groovyScript {
                 script('''def vpc1= "usc1-kcfn01-sss-cor-cnc01" 
                       def vpc2= "use1-kcfn01-sss-cor-cnc01" 
@@ -39,7 +39,7 @@ job('cloudrundeploy') {
         activeChoiceReactiveReferenceParam('MAILSERVER') {
             description('Allows user choose from multiple choices')
             omitValueField()
-            choiceType('FORMATTED_HIDDEN_HTML')
+            choiceType('FORMATTED_HTML')
             groovyScript {
                 script('''def mailserver1= "10.239.124.83" \r\n
                         def mailserver2= "10.239.124.84" \r\n
