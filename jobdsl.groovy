@@ -26,7 +26,7 @@ job('cloudrundeploy') {
                 script('''def vpc1= "usc1-kcfn01-sss-cor-cnc01" 
                       def vpc2= "use1-kcfn01-sss-cor-cnc01" 
                       if(PROJECT=="gcp-kcfn01" && REGION=="us-central1") 
-                      return "${vpc1}<input type="hidden" name="value" value="${vpc2}" />" 
+                      return  "<input name='value' value='${vpc1}' class='setting-input' type='text'>" 
                       else if (PROJECT=="gcp-kcfn01" && REGION=="us-east1") 
                       return "${vpc2}<input type="hidden" name="value" value="${vpc3}" />" 
                       else  
