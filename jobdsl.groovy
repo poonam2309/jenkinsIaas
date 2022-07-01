@@ -26,9 +26,10 @@ job('cloudrundeploy') {
                 script('''def vpc1= "usc1-kcfn01-sss-cor-cnc01" 
                       def vpc2= "use1-kcfn01-sss-cor-cnc01" 
                       if(PROJECT=="gcp-kcfn01" && REGION=="us-central1") 
-                      return  "<input name='value' value='${vpc1}' type='hidden'>" 
+                      return  "<b>${vpc1}</b><input type='hidden' name='value' value='${vpc1}'>"
+                      
                       else if (PROJECT=="gcp-kcfn01" && REGION=="us-east1") 
-                      return "<input name='value' value='${vpc2}' type='hidden'>" 
+                      return "<b>${vpc2}</b><input type='hidden' name='value' value='${vpc2}'>" 
                       else  
                       return "Kindly select valid Project and its Respective Region"''') 
                 fallbackScript('"fallback choice"')
