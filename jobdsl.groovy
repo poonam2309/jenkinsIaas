@@ -23,6 +23,7 @@ job('cloudrundeploy') {
             omitValueField()
             choiceType('FORMATTED_HTML')
             groovyScript {
+                script {
                 script('''def vpc1= "usc1-kcfn01-sss-cor-cnc01" 
                       def vpc2= "use1-kcfn01-sss-cor-cnc01" 
                       if(PROJECT=="gcp-kcfn01" && REGION=="us-central1") 
@@ -33,6 +34,7 @@ job('cloudrundeploy') {
                       else  
                       return "no match condition exist"''') 
                 sandbox(true)
+                }
                 fallbackScript('"no project"')
                 
             }
@@ -44,6 +46,7 @@ job('cloudrundeploy') {
             omitValueField()
             choiceType('FORMATTED_HTML')
             groovyScript {
+                script {
                 script('''def mailserver1= "10.239.124.83" \r\n
                         def mailserver2= "10.239.124.84" \r\n
                         if(PROJECT=="gcp-kcfn01" && REGION=="us-central1") \r\n
@@ -52,8 +55,9 @@ job('cloudrundeploy') {
                        return  "<b>${mailserver2}</b><input type='hidden' name='value' value='${mailserver2}'>"
                         else \r\n
                         return "no match condition exist"''') 
-                sandbox(true)
-                fallbackScript('"No region"')
+              sandbox(true)
+              }
+              fallbackScript('"No region"')
             }
             referencedParameter('PROJECT')
             referencedParameter('REGION')
