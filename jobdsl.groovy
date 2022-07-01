@@ -26,9 +26,9 @@ job('cloudrundeploy') {
                 script('''def vpc1= "usc1-kcfn01-sss-cor-cnc01" \r\n
                       def vpc2= "use1-kcfn01-sss-cor-cnc01" \r\n
                       if(PROJECT=="gcp-kcfn01" && REGION=="us-central1") \r\n
-                      return "<b>${vpc1}</b><input type=\"hidden\" name=\"value\" value=\"${vpc1}\" />" \r\n
+                      return "<b>${vpc1}<\/b><input type=\"hidden\" name=\"value\" value=\"${vpc1}\" \/>" \r\n
                       else if (PROJECT=="gcp-kcfn01" && REGION=="us-east1") \r\n
-                      return "<b>${vpc2}</b><input type=\"hidden\" name=\"value\" value=\"${vpc2}\" />" \r\n
+                      return "<b>${vpc2}<\/b><input type=\"hidden\" name=\"value\" value=\"${vpc2}\" \/>" \r\n
                       else  \r\n
                       return "Kindly select valid Project and its Respective Region"''') 
                 fallbackScript('"fallback choice"')
@@ -44,9 +44,9 @@ job('cloudrundeploy') {
                 script('''def mailserver1= "10.239.124.83" \r\n
                         def mailserver2= "10.239.124.84" \r\n
                         if(PROJECT=="gcp-kcfn01" && REGION=="us-central1") \r\n
-                        return "<b>${mailserver1}</b><input type=\"hidden\" name=\"value\" value=\"${mailserver1}\" />" \r\n
+                        return "<b>${mailserver1}<\/b><input type=\"hidden\" name=\"value\" value=\"${mailserver1}\" \/>" \r\n
                         else if (PROJECT=="gcp-kcfn01" && REGION=="us-east1") \r\n
-                        return "<b>${mailserver2}</b><input type=\"hidden\" name=\"value\" value=\"${mailserver2}\" />" \r\n
+                        return "<b>${mailserver2}<\/b><input type=\"hidden\" name=\"value\" value=\"${mailserver2}\" \/>" \r\n
                         else \r\n
                         return "Kindly select valid Project and its Respective Region"''') 
                 fallbackScript('"fallback choice"')
