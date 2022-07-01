@@ -31,7 +31,7 @@ job('cloudrundeploy') {
                       else if (PROJECT=="gcp-kcfn01" && REGION=="us-east1") 
                       return "<b>${vpc2}</b><input type='hidden' name='value' value='${vpc2}'>" 
                       else  
-                      return "no condion exist"''') 
+                      return "no match condion exist"''') 
                 fallbackScript('"no project"')
             }
             referencedParameter('PROJECT')
@@ -49,7 +49,7 @@ job('cloudrundeploy') {
                         else if (PROJECT=="gcp-kcfn01" && REGION=="us-east1") \r\n
                        return  "<b>${mailserver2}</b><input type='hidden' name='value' value='${mailserver2}'>"
                         else \r\n
-                        return "condition not exist"''') 
+                        return "no match condition exist"''') 
                 fallbackScript('"No region"')
             }
             referencedParameter('PROJECT')
