@@ -50,7 +50,7 @@ job('cloudrundeploy') {
                        return  "<b>${mailserver2}</b><input type='hidden' name='value' value='${mailserver2}'>"
                         else \r\n
                         return "Kindly select valid Project and its Respective Region"''') 
-                fallbackScript('"fallback choice"')
+                fallbackScript('"fallback choice error"')
             }
             referencedParameter('PROJECT')
             referencedParameter('REGION')
