@@ -1,6 +1,6 @@
 job('cloudrundeploy') {
     parameters {
-        choiceParam('myParameterName', ['option 1 (default)', 'option 2', 'option 3'], 'my description')
+        choiceParam('myParameterName', ['option 1 (default)', 'option 3', 'option 5'], 'my description')
         activeChoiceParam('PROJECT') {
             description('Allows user choose from multiple choices')
             choiceType('SINGLE_SELECT')
