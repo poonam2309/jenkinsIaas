@@ -31,8 +31,8 @@ job('cloudrundeploy') {
                       else if (PROJECT=="gcp-kcfn01" && REGION=="us-east1") 
                       return "<b>${vpc2}</b><input type='hidden' name='value' value='${vpc2}'>" 
                       else  
-                      return "fallback error"''') 
-                fallbackScript('"fallback choice"')
+                      return "no condion exist"''') 
+                fallbackScript('"no project"')
             }
             referencedParameter('PROJECT')
             referencedParameter('REGION')
@@ -49,8 +49,8 @@ job('cloudrundeploy') {
                         else if (PROJECT=="gcp-kcfn01" && REGION=="us-east1") \r\n
                        return  "<b>${mailserver2}</b><input type='hidden' name='value' value='${mailserver2}'>"
                         else \r\n
-                        return "Kindly select valid Project and its Respective Region"''') 
-                fallbackScript('"fallback choice error"')
+                        return "condition not exist"''') 
+                fallbackScript('"No region"')
             }
             referencedParameter('PROJECT')
             referencedParameter('REGION')
