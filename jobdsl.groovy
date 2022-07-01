@@ -31,7 +31,7 @@ job('cloudrundeploy') {
                       else if (PROJECT=="gcp-kcfn01" && REGION=="us-east1") 
                       return "<b>${vpc2}</b><input type='hidden' name='value' value='${vpc2}'>" 
                       else  
-                      return "no match condion exist"''') 
+                      return "no match condition exist"''') 
                 fallbackScript('"no project"')
             }
             referencedParameter('PROJECT')
