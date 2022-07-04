@@ -80,7 +80,7 @@ pipelineJob('cloud_automation/terraform/cloudrun/cloudrundeploy1') {
         git {
           remote {
             github('ukg-cloud/cloud-automation', 'https', 'github.com')
-            credentials('UKG github ORG')
+            credentials('github-auth-svc')
           }
           branch('*/poonam')
         }
