@@ -1,4 +1,4 @@
-job('cloud_automation/terraform/cloudrun/cloudrundeploy1') {
+pipelineJob('cloud_automation/terraform/cloudrun/cloudrundeploy1') {
     parameters {
         activeChoiceParam('PROJECT') {
             description('Allows user choose from multiple choices')
@@ -68,10 +68,25 @@ job('cloud_automation/terraform/cloudrun/cloudrundeploy1') {
         }
             
     }
-    scm 
+  /*  scm 
     {
        github('https://github.com/ukg-cloud/cloud-automation', 'poonam')
        scriptPath('Jenkinsfile')
        credentials('github-ci-key')
+    }*/
+   definition {
+    cpsScm {
+      scm {
+        git {
+          remote {
+            github('ukg-cloud/cloud-automation', 'https', 'github.com')
+            credentials('UKG github ORG')
+          }
+          branch('*/poonam')
+        }
+      }
+      scriptPath("Cloudrun/Jenkinsfile")
+     // lightweight(true)
     }
+  }
 }
