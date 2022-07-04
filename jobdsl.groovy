@@ -13,7 +13,7 @@ job('cloudrundeploy') {
             description('Allows user choose from multiple choices')
             choiceType('SINGLE_SELECT')
             groovyScript {
-                script('if(PROJECT=="gcp-kcfn01") return["us-central1","us-east1" ] else if (PROJECT=="gcp-cust01") return["us-east1"] else return ["null"]')
+                script('if(PROJECT=="gcp-kcfn01") return["us-central1","us-east2" ] else if (PROJECT=="gcp-cust01") return["us-east1"] else return ["null"]')
                 fallbackScript('"fallback choice"')
             }
             referencedParameter('PROJECT')
@@ -25,12 +25,12 @@ job('cloudrundeploy') {
             groovyScript {
                 script {
                 script('''def vpc1= "usc1-kcfn01-sss-cor-cnc01" 
-                      def vpc2= "use1-kcfn01-sss-cor-cnc01" 
+                      def vpc3= "use1-kcfn01-sss-cor-cnc01" 
                       if(PROJECT=="gcp-kcfn01" && REGION=="us-central1") 
                       return  "<b>${vpc1}</b><input type='hidden' name='value' value='${vpc1}'>"
                       
-                      else if (PROJECT=="gcp-kcfn01" && REGION=="us-east1") 
-                      return "<b>${vpc2}</b><input type='hidden' name='value' value='${vpc2}'>" 
+                      else if (PROJECT=="gcp-kcfn01" && REGION=="us-east2") 
+                      return "<b>${vpc3}</b><input type='hidden' name='value' value='${vpc3}'>" 
                       else  
                       return "no match condition exist"''') 
                sandbox(boolean sandbox = true)
