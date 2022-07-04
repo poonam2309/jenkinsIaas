@@ -13,7 +13,7 @@ job('cloudrundeploy') {
             choiceType('SINGLE_SELECT')
             groovyScript {
                 script('''if(PROJECT=="gcp-kcfn01") 
-                          return["us-central1","us-east2" ] 
+                          return["us-central1","us-east1" ] 
                           else if (PROJECT=="gcp-cust01") 
                           return["us-east1"] 
                           else 
@@ -33,7 +33,7 @@ job('cloudrundeploy') {
                       if(PROJECT=="gcp-kcfn01" && REGION=="us-central1") 
                       return  "<b>${vpc1}</b><input type='hidden' name='value' value='${vpc1}'>"
                       
-                      else if (PROJECT=="gcp-kcfn01" && REGION=="us-east2") 
+                      else if (PROJECT=="gcp-kcfn01" && REGION=="us-east1") 
                       return "<b>${vpc3}</b><input type='hidden' name='value' value='${vpc3}'>" 
                       else  
                       return "no match condition exist"''') 
