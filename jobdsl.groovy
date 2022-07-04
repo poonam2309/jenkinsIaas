@@ -33,7 +33,7 @@ job('cloudrundeploy') {
                       return "<b>${vpc3}</b><input type='hidden' name='value' value='${vpc3}'>" 
                       else  
                       return "no match condition exist"''') 
-               sandbox(boolean sandbox = true)
+              // sandbox(boolean sandbox = true)
                 }
                 fallbackScript('"no project"')
                 
@@ -55,7 +55,7 @@ job('cloudrundeploy') {
                        return  "<b>${mailserver2}</b><input type='hidden' name='value' value='${mailserver2}'>"
                         else \r\n
                         return "no match condition exist"''') 
-              sandbox(boolean sandbox = true)
+            //  sandbox(boolean sandbox = true)
               }
               fallbackScript('"No region"')
             }
