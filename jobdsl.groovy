@@ -77,11 +77,10 @@ pipelineJob('cloud_automation/terraform/cloudrun/cloudrundeploy1') {
    definition {
     cpsScm {
       scm {
-        git {
-          remote {
+        git {       
             github('ukg-cloud/cloud-automation', 'https', 'github.com')
             credentials('github-auth-svc')
-          }
+          
           branch('*/poonam')
         }
       }
