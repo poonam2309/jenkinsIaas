@@ -71,5 +71,7 @@ job('cloud_automation/terraform/cloudrun/cloudrundeploy1') {
     scm 
     {
        github('https://github.com/ukg-cloud/cloud-automation', 'poonam')
+       scriptPath('Jenkinsfile')
+       credentials('github-ci-key')
     }
 }
