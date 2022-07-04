@@ -1,4 +1,4 @@
-job('cloudrundeploy1') {
+job('cloud_automation/terraform/cloudrun/cloudrundeploy1') {
     parameters {
         activeChoiceParam('PROJECT') {
             description('Allows user choose from multiple choices')
