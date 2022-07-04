@@ -70,6 +70,6 @@ job('cloud_automation/terraform/cloudrun/cloudrundeploy1') {
     }
     scm 
     {
-       github('https://github.com/ukg-cloud/cloud-automation.git', 'poonam')
+       github('https://github.com/ukg-cloud/cloud-automation', 'poonam')
     }
 }
