@@ -5,7 +5,7 @@ pipelineJob('cloud_automation/terraform/cloudrun/cloudrundeploy1') {
             choiceType('SINGLE_SELECT')
             groovyScript {
                 script('["gcp-kcfn01","gcp-cust01"]')
-                fallbackScript('"No Region selected"')
+                fallbackScript('"No Region selected "')
             }
         }
          activeChoiceReactiveParam('REGION') {
