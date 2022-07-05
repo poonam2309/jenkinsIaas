@@ -58,7 +58,7 @@ pipelineJob('cloud_automation/terraform/cloudrun/cloudrundeploy1') {
                         else if (PROJECT=="gcp-kcfn01" && REGION=="us-east1") 
                        return  "<b>${mailserver2}</b><input type='hidden' name='value' value='${mailserver2}'>"
                         else 
-                        return "no match condition exist"''') 
+                        return "no match condition exist for Region"''') 
             //  sandbox(boolean sandbox = true)
              // }
               fallbackScript('"No region"')
