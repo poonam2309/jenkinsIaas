@@ -4,7 +4,7 @@ pipelineJob('cloud_automation/terraform/cloudrun/cloudrundeploy1') {
             description('Allows user choose from multiple choices')
             choiceType('SINGLE_SELECT')
             groovyScript {
-                script('["gcp-kcfn01","gcp-cust01"]')
+                script('["gcp-kcfn01","gcp-cust01.gcp-dsl2"]')
                 fallbackScript('"No Region selected "')
             }
         }
