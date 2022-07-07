@@ -1,4 +1,4 @@
-pipelineJob('cloudrundeploy1') {
+pipelineJob('cloudrundeploy') {
     parameters {
         activeChoiceParam('PROJECT') {
             description('Allows user choose from multiple choices')
