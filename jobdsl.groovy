@@ -78,6 +78,10 @@ pipelineJob('cloudrundeploy') {
        credentials('github-ci-key')
     }*/
    definition {
+        cps {
+            script(readFileFromWorkspace('jobdsl.groovy'))
+            sandbox()
+        }
     cpsScm {
       scm {
         git {       
