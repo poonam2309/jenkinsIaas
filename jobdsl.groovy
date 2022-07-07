@@ -4,7 +4,7 @@ pipelineJob('cloudrundeploy') {
             description('Allows user choose from multiple choices')
             choiceType('SINGLE_SELECT')
             groovyScript {
-                script('["gcp-kcfn01","gcp-cust01","gcp-dsl2"]')
+                script('["gcp-kcfn01","gcp-cust01","gcp-dsl2","gcp-14s"]')
                 fallbackScript('"No Region selected "')
             }
         }
