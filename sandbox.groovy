@@ -40,7 +40,7 @@ pipelineJob('sandbox') {
         sandbox(true)
       }
             }
-            referencedParameter('PROJECT')
+            //referencedParameter('PROJECT')
         }
   randomName('')
   filterLength(0)
