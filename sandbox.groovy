@@ -22,6 +22,7 @@ pipelineJob('sandbox') {
   }
    choiceParameter {
             name('REGION')
+      filterable(false)
             description('Allows user choose from multiple choices')
             choiceType('PT_SINGLE_SELECT')
       script{
