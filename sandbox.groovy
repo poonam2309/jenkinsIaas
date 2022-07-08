@@ -2,6 +2,7 @@ pipelineJob('sandbox') {
    parameters {
     choiceParameter {
   name('PROJECT')
+  filterable(false)
   description('Project name')
   choiceType('PT_SINGLE_SELECT')
   script {
@@ -16,6 +17,8 @@ pipelineJob('sandbox') {
       }
     }
   }
+  randomName('')
+  filterLength(0)
   }
    choiceReactiveParameter {
             name('REGION')
@@ -36,5 +39,7 @@ pipelineJob('sandbox') {
             }
             referencedParameter('PROJECT')
         }
+  randomName('')
+  filterLength(0)
 }
    }}
