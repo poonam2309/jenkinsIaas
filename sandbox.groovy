@@ -46,7 +46,7 @@ pipelineJob('sandbox') {
   randomName('')
   filterLength(0)
 }
-      cascadeChoiceParameter {
+      DynamicReferenceParameter {
             name('VPC_CONNECTOR')
       filterable(false)
             description('Allows user choose from multiple choices')
