@@ -108,4 +108,20 @@ pipelineJob('sandbox') {
      stringParam('RELEASE_NUMBER', '08.05.00', 'Release Version')
       stringParam('INVOKERIMAGE_TAG', '201', 'Invoker image Version')
       stringParam('RUNNERIMAGE_TAG', '202', 'Runner image Version')
-   }}
+   }
+definition {
+    cpsScm {
+      scm {
+        git {       
+            remote {
+            github('ukg-cloud/cloud-automation', 'https', 'github.com')
+            credentials('github-auth-svc')
+          }
+          branch('*/poonam')
+        }
+      }
+      scriptPath("Cloudrun/Jenkinsfile")
+     // lightweight(true)
+    }
+  }
+}
