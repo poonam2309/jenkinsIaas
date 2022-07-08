@@ -48,7 +48,6 @@ pipelineJob('sandbox') {
 }
       dynamicReferenceParameter {
             name('VPC_CONNECTOR')
-      filterable(false)
             description('Allows user choose from multiple choices')
             choiceType('ET_FORMATTED_HTML')
       script{
@@ -73,6 +72,6 @@ pipelineJob('sandbox') {
             referencedParameters('PROJECT','REGION')
         }
   randomName('')
-  filterLength(0)
+
 }
    }}
