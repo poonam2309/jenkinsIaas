@@ -71,7 +71,7 @@ pipelineJob('sandbox') {
       }
             }
             referencedParameters('PROJECT')
-            referencedParameters('REGION')
+            
         }
   randomName('')
 
