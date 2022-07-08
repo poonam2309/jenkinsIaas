@@ -76,4 +76,33 @@ pipelineJob('sandbox') {
   randomName('')
 
 }
+       dynamicReferenceParameter {
+            name('MAILSERVER')
+            description('Allows user choose from multiple choices')
+            omitValueField(true)
+            choiceType('ET_FORMATTED_HTML')
+      script{
+            groovyScript {
+             script {
+                 script('''def mailserver1= "10.239.124.83" 
+                        def mailserver2= "10.239.124.84" 
+                        if(PROJECT=="gcp-kcfn01" && REGION=="us-central1") 
+                        return  "<b>${mailserver1}</b><input type='hidden' name='value' value='${mailserver1}'>"
+                        else if (PROJECT=="gcp-kcfn01" && REGION=="us-east1") 
+                       return  "<b>${mailserver2}</b><input type='hidden' name='value' value='${mailserver2}'>"
+                        else 
+                        return "no match condition exist for Region"''') 
+                sandbox(true)
+             }
+               fallbackScript {
+        script("return ['Unable to list branches']")
+        sandbox(true)
+      }
+            }
+            referencedParameters('PROJECT,REGION')
+            
+        }
+  randomName('')
+
+}
    }}
