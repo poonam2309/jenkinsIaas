@@ -11,14 +11,15 @@ pipelineJob('cloudrundeploy') {
          activeChoiceReactiveParam('REGION') {
             description('Allows user choose from multiple choices')
             choiceType('SINGLE_SELECT')
-            groovyScript {
+            CpsContext {
                 script('''if(PROJECT=="gcp-kcfn01") 
                           return["us-central1","us-east1" ] 
                           else if (PROJECT=="gcp-cust01") 
                           return["us-east1"] 
                           else 
                           return ["null"]''')
-                GroovySandbox().withApprovalContext()
+                sandbox(true)
+            
                 fallbackScript('"fallback choice"')
             }
             referencedParameter('PROJECT')
