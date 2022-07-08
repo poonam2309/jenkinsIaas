@@ -8,7 +8,7 @@ pipelineJob('sandbox') {
   script {
     groovyScript {
       script {
-        script('return ["gcp-kcfn01","gcp-cust01","gcp-dsl2","gcp-14s"]')
+        script('''return ["gcp-kcfn01","gcp-cust01","gcp-dsl2","gcp-14s"]''')
         sandbox(true)
       }
       fallbackScript {
@@ -20,7 +20,7 @@ pipelineJob('sandbox') {
   randomName('')
   filterLength(0)
   }
-   CascadeChoiceParameter {
+   cascadeChoiceParameter {
             name('REGION')
       filterable(false)
             description('Allows user choose from multiple choices')
