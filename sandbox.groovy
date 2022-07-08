@@ -33,7 +33,7 @@ pipelineJob('sandbox') {
                           else if (PROJECT=="gcp-cust01") 
                           return["select Region","us-east1"] 
                           else 
-                          return ["select valid project"]''')
+                          return ["Project not selected"]''')
                 sandbox(true)
              }
                fallbackScript {
