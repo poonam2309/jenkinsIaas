@@ -20,7 +20,7 @@ pipelineJob('sandbox') {
   randomName('')
   filterLength(0)
   }
-   choiceReactiveParameter {
+   choiceParameter {
             name('REGION')
             description('Allows user choose from multiple choices')
             choiceType('PT_SINGLE_SELECT')
