@@ -8,7 +8,7 @@ pipelineJob('sandbox') {
   script {
     groovyScript {
       script {
-        script("return ['The list of branches']")
+        script('return ["gcp-kcfn01","gcp-cust01","gcp-dsl2","gcp-14s"]')
         sandbox(true)
       }
       fallbackScript {
