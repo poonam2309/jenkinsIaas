@@ -35,7 +35,10 @@ pipelineJob('sandbox') {
                           return ["null"]''')
                 sandbox(true)
              }
-               fallbackScript('"fallback choice"')
+               fallbackScript {
+        script("return ['Unable to list branches']")
+        sandbox(true)
+      }
             }
             referencedParameter('PROJECT')
         }
