@@ -18,6 +18,7 @@ pipelineJob('cloudrundeploy') {
                           return["us-east1"] 
                           else 
                           return ["null"]''')
+                GroovySandbox()
                 fallbackScript('"fallback choice"')
             }
             referencedParameter('PROJECT')
