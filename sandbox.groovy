@@ -20,7 +20,7 @@ pipelineJob('sandbox') {
   randomName('')
   filterLength(0)
   }
-   choiceParameter {
+   CascadeChoiceParameter {
             name('REGION')
       filterable(false)
             description('Allows user choose from multiple choices')
@@ -41,7 +41,7 @@ pipelineJob('sandbox') {
         sandbox(true)
       }
             }
-            //referencedParameter('PROJECT')
+            referencedParameters('PROJECT')
         }
   randomName('')
   filterLength(0)
