@@ -50,7 +50,7 @@ pipelineJob('sandbox') {
             name('VPC_CONNECTOR')
             description('Allows user choose from multiple choices')
             omitValueField(true)
-            choiceType('FORMATTED_HTML')
+            choiceType('ET_FORMATTED_HTML')
       script{
             groovyScript {
              script {
