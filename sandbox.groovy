@@ -70,7 +70,7 @@ pipelineJob('sandbox') {
         sandbox(true)
       }
             }
-            referencedParameters('PROJECT')
+            referencedParameters('PROJECT,REGION')
             
         }
   randomName('')
