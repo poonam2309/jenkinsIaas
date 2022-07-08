@@ -1,31 +1,31 @@
 pipelineJob('cloudrundeploy') {
     parameters {
         activeChoiceParam('PROJECT') {
-            description('Allows user choose from multiple choices')
+            description('Please select the required Project')
             choiceType('SINGLE_SELECT')
             groovyScript {
-                script('["gcp-kcfn01","gcp-cust01","gcp-dsl2","gcp-14s"]')
-                fallbackScript('"No Region selected "')
+                script('["select Project","gcp-kcfn01","gcp-cust01","gcp-dsl2","gcp-14s"]')
+                fallbackScript('"No Project selected "')
             }
         }
          activeChoiceReactiveParam('REGION') {
-            description('Allows user choose from multiple choices')
+            description('Please select the required Region')
             choiceType('SINGLE_SELECT')
             CpsContext {
                 script('''if(PROJECT=="gcp-kcfn01") 
-                          return["us-central1","us-east1" ] 
+                          return["select Region",""us-central1","us-east1" ] 
                           else if (PROJECT=="gcp-cust01") 
-                          return["us-east1"] 
+                          return["select Region","us-east1"] 
                           else 
-                          return ["null"]''')
+                          return ["select valid Project"]''')
                 sandbox(true)
             
-                fallbackScript('"fallback choice"')
+                fallbackScript('"No region selected"')
             }
             referencedParameter('PROJECT')
         }
         activeChoiceReactiveReferenceParam('VPC_CONNECTOR') {
-            description('Allows user choose from multiple choices')
+            description('Provided VPC Connector as per the selected Project and Region')
             omitValueField()
             choiceType('FORMATTED_HTML')
             groovyScript {
@@ -41,14 +41,14 @@ pipelineJob('cloudrundeploy') {
                       return "no match condition exist"''') 
               // sandbox(boolean sandbox = true)
                // }
-                fallbackScript('"no project"')
+                fallbackScript('"No region"')
                 
             }
             referencedParameter('PROJECT')
             referencedParameter('REGION')
         }
         activeChoiceReactiveReferenceParam('MAILSERVER') {
-            description('Allows user choose from multiple choices')
+            description('Provided Mail Server as per the selected Project and Region')
             omitValueField()
             choiceType('FORMATTED_HTML')
             groovyScript {
