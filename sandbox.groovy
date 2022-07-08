@@ -3,16 +3,16 @@ pipelineJob('sandbox') {
     choiceParameter {
   name('PROJECT')
   filterable(false)
-  description('Project name')
+  description('Please select the required Project')
   choiceType('PT_SINGLE_SELECT')
   script {
     groovyScript {
       script {
-        script('''return ["gcp-kcfn01","gcp-cust01","gcp-dsl2","gcp-14s"]''')
+        script('''return ["select Project","gcp-kcfn01","gcp-cust01","gcp-dsl2","gcp-14s"]''')
         sandbox(true)
       }
       fallbackScript {
-        script("return ['Unable to list branches']")
+        script("return ['No Project selected']")
         sandbox(true)
       }
     }
@@ -23,21 +23,21 @@ pipelineJob('sandbox') {
    cascadeChoiceParameter {
             name('REGION')
       filterable(false)
-            description('Allows user choose from multiple choices')
+            description('Please select the required Region')
             choiceType('PT_SINGLE_SELECT')
       script{
             groovyScript {
              script {
                 script('''if(PROJECT=="gcp-kcfn01") 
-                          return["us-central1","us-east1" ] 
+                          return["select Region","us-central1","us-east1" ] 
                           else if (PROJECT=="gcp-cust01") 
-                          return["us-east1"] 
+                          return["select Region","us-east1"] 
                           else 
-                          return ["null"]''')
+                          return ["select valid project"]''')
                 sandbox(true)
              }
                fallbackScript {
-        script("return ['Unable to list branches']")
+        script("return ['No region selected']")
         sandbox(true)
       }
             }
@@ -48,7 +48,7 @@ pipelineJob('sandbox') {
 }
       dynamicReferenceParameter {
             name('VPC_CONNECTOR')
-            description('Allows user choose from multiple choices')
+            description('Provided VPC Connector as per the selected Project and Region')
             omitValueField(true)
             choiceType('ET_FORMATTED_HTML')
       script{
@@ -66,7 +66,7 @@ pipelineJob('sandbox') {
                 sandbox(true)
              }
                fallbackScript {
-        script("return ['Unable to list branches']")
+        script("return ['NO Region']")
         sandbox(true)
       }
             }
@@ -78,7 +78,7 @@ pipelineJob('sandbox') {
 }
        dynamicReferenceParameter {
             name('MAILSERVER')
-            description('Allows user choose from multiple choices')
+            description('Provided Mail Server as per the selected Project and Region')
             omitValueField(true)
             choiceType('ET_FORMATTED_HTML')
       script{
@@ -95,7 +95,7 @@ pipelineJob('sandbox') {
                 sandbox(true)
              }
                fallbackScript {
-        script("return ['Unable to list branches']")
+        script("return ['No Region']")
         sandbox(true)
       }
             }
