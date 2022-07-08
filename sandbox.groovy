@@ -5,7 +5,7 @@ pipelineJob('sandbox') {
     delegate.choiceType('RADIO')
     delegate.groovyScript {
         script('[test1,test2]') {
-            sandbox()
+            sandbox(true)
         }
     }
 }
