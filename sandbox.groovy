@@ -49,6 +49,7 @@ pipelineJob('sandbox') {
       dynamicReferenceParameter {
             name('VPC_CONNECTOR')
             description('Allows user choose from multiple choices')
+            omitValueField(true)
             choiceType('ET_FORMATTED_HTML')
       script{
             groovyScript {
