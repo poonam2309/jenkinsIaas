@@ -1,9 +1,8 @@
 pipelineJob('sandbox') {
    parameters {
     choiceParameter {
-  name('Branch')
-  description('Lists branches for integration job')
-  filterable(true)
+  name('PROJECT')
+  description('Project name')
   choiceType('PT_SINGLE_SELECT')
   script {
     groovyScript {
@@ -17,7 +16,25 @@ pipelineJob('sandbox') {
       }
     }
   }
-  randomName('')
-  filterLength(0)
+  }
+   choiceReactiveParameter {
+            name('REGION')
+            description('Allows user choose from multiple choices')
+            choiceType('PT_SINGLE_SELECT')
+      script{
+            groovyScript {
+             script {
+                script('''if(PROJECT=="gcp-kcfn01") 
+                          return["us-central1","us-east1" ] 
+                          else if (PROJECT=="gcp-cust01") 
+                          return["us-east1"] 
+                          else 
+                          return ["null"]''')
+                sandbox(true)
+             }
+               fallbackScript('"fallback choice"')
+            }
+            referencedParameter('PROJECT')
+        }
 }
    }}
