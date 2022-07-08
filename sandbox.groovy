@@ -57,10 +57,10 @@ pipelineJob('sandbox') {
                  script('''def vpc1= "usc1-kcfn01-sss-cor-cnc01" 
                       def vpc3= "use1-kcfn01-sss-cor-cnc01" 
                       if(PROJECT=="gcp-kcfn01" && REGION=="us-central1") 
-                      return "<input class='setting-input' name='value' type='text' value='${vpc1}'>"
+                      return "${vpc1}<input class='setting-input' name='value' type='text' value='${vpc1}'>"
                       
                       else if (PROJECT=="gcp-kcfn01" && REGION=="us-east1") 
-                      return "<input class='setting-input' name='value' type='text' value='${vpc3}'>" 
+                      return "${vpc3}<input class='setting-input' name='value' type='text' value='${vpc3}'>" 
                       else  
                       return "no match condition exist"''') 
                 sandbox(true)
